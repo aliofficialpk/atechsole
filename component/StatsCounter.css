@@ -1,0 +1,219 @@
+
+.stats-counter-section {
+  width: 100%;
+  height: auto;
+  padding: 50px 5%;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.stats-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.stats-header p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Counter Grid */
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Counter Card */
+.counter-card {
+  text-align: center;
+  padding: 20px;
+  background: rgba(20, 12, 30, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.counter-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.counter-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.counter-card:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.counter-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.counter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 92, 58, 0.28) 0%, rgba(6, 28, 23, 0.42) 50%, rgba(10, 10, 10, 0.55) 100%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.counter-card:hover::before {
+  opacity: 1;
+}
+
+.counter-card::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 60%;
+  top: -30%;
+  left: -40%;
+  transform: rotate(25deg);
+  background: linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.22) 35%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 60%);
+  filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.counter-card:hover::after {
+  animation: stats-sweep 850ms ease-out forwards;
+}
+
+@keyframes stats-sweep {
+  0% { opacity: 0; transform: translate(0, 0) rotate(25deg); }
+  10% { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(60%, 80%) rotate(25deg); }
+}
+
+/* Counter Number */
+.counter-number {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Counter Label */
+.counter-label {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-counter-section {
+    padding: 60px 5%;
+    margin-bottom: 100px;
+  }
+
+  .stats-header h2 {
+    font-size: 2rem;
+  }
+
+  .stats-header p {
+    font-size: 1rem;
+  }
+
+  .counter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .counter-number {
+    font-size: 2.6rem;
+  }
+
+  .counter-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-counter-section {
+    padding: 40px 5%;
+    margin-bottom: 80px;
+  }
+
+  .stats-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .stats-header h2::before {
+    left: -25px;
+  }
+
+  .counter-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .counter-card {
+    padding: 24px;
+  }
+
+  .counter-number {
+    font-size: 2.2rem;
+  }
+
+  .counter-label {
+    font-size: 0.85rem;
+  }
+}

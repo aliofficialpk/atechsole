@@ -1,0 +1,139 @@
+.floating-nav-container {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+.floating-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 92, 58, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 6px 8px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(15, 92, 58, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow-x: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.floating-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-item {
+  color: rgb(241, 241, 241);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 24px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  color: #fff;
+  background: rgba(215, 38, 45, 0.9);
+}
+
+/* Dropdown Styling */
+.nav-dropdown {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 92, 58, 0.98);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 10px 25px rgba(15, 92, 58, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+  animation: fadeIn 0.2s ease-out;
+  z-index: 1002;
+}
+
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+
+.dropdown-item {
+  color: rgb(241, 241, 241);
+  background: transparent;
+  border: none;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.dropdown-item:hover {
+  background: rgba(215, 38, 45, 0.8);
+  color: white;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Responsive Scroll for Mobile */
+@media (max-width: 768px) {
+  .floating-nav-container {
+    display: none;
+  }
+}

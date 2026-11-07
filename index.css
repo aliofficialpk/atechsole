@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Brand Colors - Derived from Logo */
+  --primary: #0F5C3A;
+  /* Dark Green - Authority */
+  --secondary: #0a4a2e;
+  /* Darker Green - Hover states */
+  --accent: #D7262D;
+  /* Red - Action & Emphasis */
+  --accent-hover: #B81F25;
+  /* Darker Red - Button hovers */
+
+  /* Neutrals */
+  --card-bg: #FFFFFF;
+  --light-grey: #F5F7F6;
+  --text: #1F1F1F;
+  --text-light: #64748b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+#root, .app-layout {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  cursor: none;
+  /* Hide default cursor to show custom one */
+}
+
+/* Ensure cursor is visible on touch devices if we hide custom cursor there */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+.clickable {
+  cursor: none;
+  /* Ensure custom cursor stays even on clickable elements */
+}
+
+@media (pointer: coarse) {
+
+  a,
+  button,
+  input,
+  textarea,
+  .clickable {
+    cursor: pointer;
+  }
+}

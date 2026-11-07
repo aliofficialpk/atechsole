@@ -1,0 +1,261 @@
+.portfolio-container {
+  min-height: 100vh;
+  margin-bottom: 100px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.portfolio-intro {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 60px;
+  background-color: rgba(13, 14, 13, 0.6);
+  color: white;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.portfolio-intro h1 {
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.15s;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  color: #ffff;
+  margin-bottom: 10px;
+}
+
+.portfolio-header p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1240px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto 60px;
+  box-sizing: border-box;
+}
+
+.portfolio-card-wrapper {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.portfolio-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 92, 58, 0.18) 0%, rgba(10, 14, 16, 0.88) 100%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-card-top {
+  height: 45%;
+  width: 100%;
+  position: relative;
+  background-color: #0b0f12;
+}
+
+.portfolio-card-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .portfolio-intro h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio-intro {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .portfolio-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .view-btn {
+  transform: translateY(0);
+}
+
+.portfolio-card-bottom {
+  height: 50%;
+  background: transparent;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-card-bottom h3 {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyan-text {
+  color: #D7262D;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.portfolio-card-bottom p {
+  color: rgba(255, 255, 255, 0.85);
+  /* Light grey text */
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Portfolio Responsive Media Queries */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .portfolio-intro h1 {
+    font-size: 2.4rem;
+  }
+
+  .portfolio-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .portfolio-intro {
+    height: auto;
+    padding: 40px 16px 30px;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-intro h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 30px;
+    padding: 0 16px;
+  }
+
+  .portfolio-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .portfolio-card {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .portfolio-card-bottom {
+    padding: 20px 16px;
+  }
+}
+

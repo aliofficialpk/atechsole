@@ -1,0 +1,260 @@
+.cta-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  padding: 40px 20px 0;
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.cta-subtitle {
+  font-size: 1rem;
+  color: #12764b;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #ffff;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.cta-button {
+  margin-top: 15px;
+  width: 150px;
+  background-color: #D7262D;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 10px rgba(215, 38, 45, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #B81F25;
+  transform: translateY(-2px);
+}
+
+.cta-button svg {
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover svg {
+  transform: translateX(3px) translateY(-3px);
+}
+
+.cta-buttons-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.cta-button-quote {
+  background-color: #0F5C3A !important;
+  box-shadow: 0 4px 10px rgba(15, 92, 58, 0.3) !important;
+}
+
+.cta-button-quote:hover {
+  background-color: #0a4a2e !important;
+}
+
+.cta-image-container {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-logo {
+  width: 230px;
+  height: auto;
+  animation: floatRobot 3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes floatRobot {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.cta-contact {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.cta-contact h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-items-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s ease;
+}
+
+.cta-contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-contact-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.cta-contact-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: black;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cta-footer {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(12, 12, 12, 0.2);
+}
+
+.cta-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-footer p {
+  margin: 0;
+  color: rgb(55, 54, 54);
+  font-size: 0.9rem;
+}
+
+.cta-footer a {
+  color: #0F5C3A;
+  text-decoration: none;
+}
+
+.cta-footer a:hover {
+  color: #D7262D;
+  text-decoration: underline;
+}
+
+.cta-footer .separator {
+  color: #94a3b8;
+  margin: 0 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-image-container {
+    position: relative;
+    right: auto;
+    top: auto;
+
+  }
+
+  .cta-logo {
+    width: 250px;
+  }
+
+  .cta-section {
+    padding: 60px 20px 0;
+    min-height: auto;
+  }
+
+  .cta-items-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-footer {
+    padding: 20px 10px;
+  }
+}

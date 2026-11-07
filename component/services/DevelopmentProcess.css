@@ -1,0 +1,312 @@
+.dev-process-section {
+  padding: 80px 20px;
+  background-color: transparent; /* Assuming parent has dark bg */
+  color: #fff;
+  overflow-x: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dev-process-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.dev-process-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+ color: #fff;
+text-shadow: 0 0 10px rgba(233, 25, 25, 0.8);
+
+}
+
+.dev-process-header p {
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.process-timeline-container {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%; /* Adjust based on where we want the line */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  display: none; /* We might handle lines individually or via SVG if needed, but for now let's hide the global line and rely on positioning */
+}
+
+/* We'll use a grid or flex for the horizontal layout */
+.process-steps-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.process-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Icon Circle Area */
+.step-icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px; /* Space for the number badge area */
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 20px rgba(239, 96, 96, 0.2);
+}
+
+.step-icon-circle:hover {
+  transform: scale(1.1);
+  border-color: #ef6060;
+}
+
+.step-icon-circle img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: invert(1) brightness(2); /* Make icons white if they aren't */
+}
+
+/* Number Badge */
+.step-number-badge {
+  position: absolute;
+  top: 90px; /* Position between icon and card */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 3;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Alternating Colors for badges */
+.process-step-item:nth-child(odd) .step-number-badge {
+  background: #ff007f; /* Pink */
+  box-shadow: 0 0 10px #ff007f;
+}
+
+.process-step-item:nth-child(even) .step-number-badge {
+  background: #ff8c00; /* Orange */
+  box-shadow: 0 0 10px #ff8c00;
+}
+
+/* Connecting Lines (Pseudo-elements) */
+.process-step-item::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px; /* Connect icon to card area */
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  z-index: 0;
+  display: none; /* Hidden as per request */
+}
+
+/* Horizontal Line Segments */
+.process-step-item::after {
+  content: '';
+  position: absolute;
+  top: 110px; /* Center of number badge */
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 0;
+  display: none; /* Hidden as per request */
+}
+
+.process-step-item:last-child::after {
+  display: none;
+}
+
+/* Zig-Zag vertical positioning for visual interest */
+.process-step-item:nth-child(even) {
+  margin-top: 50px;
+}
+
+/* Content Card */
+.step-content-card {
+  margin-top: 40px;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 25px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-content-card:hover {
+  transform: translateY(-5px);
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(239, 96, 96, 0.3);
+}
+
+.step-content-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.step-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.step-content-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .process-steps-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .process-step-item:nth-child(even) {
+    margin-top: 0;
+  }
+  
+  .process-step-item::after {
+    display: none; /* Hide horizontal lines on wrap */
+  }
+}
+
+@media (max-width: 768px) {
+  .process-steps-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .process-step-item {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .step-icon-circle {
+    margin-right: 20px;
+    margin-bottom: 0;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .step-number-badge {
+    position: static;
+    margin-right: 15px;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .step-content-card {
+    margin-top: 0;
+    text-align: left;
+    min-height: auto;
+  }
+  
+  .process-step-item::before, .process-step-item::after {
+    display: none;
+  }
+  
+  .step-icon-circle img {
+    width: 30px;
+    height: 30px;
+  }
+}
+ 
+/* Ultra-small devices: 350px and below */
+@media (max-width: 350px) {
+  .dev-process-header h2{
+    font-size: 1.9rem;
+    grid-column: 1 / -1;
+  }
+  .process-steps-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .process-step-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .step-icon-circle {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .step-number-badge {
+    position: static;
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+  
+  .process-step-item:nth-child(even) {
+    margin-top: 0;
+  }
+  
+  .step-content-card {
+    padding: 18px;
+    margin-top: 0;
+    min-height: auto;
+    width: 100%;
+  }
+  
+  .step-content-card h3 {
+    font-size: 1rem;
+  }
+  
+  .step-content-card p {
+    font-size: 0.85rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}

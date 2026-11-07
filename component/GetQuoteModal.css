@@ -1,0 +1,347 @@
+/* ==========================================================
+   Get a Quote Modal - Premium Design
+========================================================== */
+.quote-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: quoteFadeIn 0.3s ease;
+}
+
+@keyframes quoteFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.quote-modal-content {
+  background: #0e121a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 950px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(15, 92, 58, 0.08);
+  animation: quoteSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes quoteSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.quote-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.quote-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.quote-modal-inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+/* Left Panel */
+.quote-left-panel {
+  background: linear-gradient(160deg, #0F5C3A 0%, #072e1d 100%);
+  padding: 40px 30px;
+  border-radius: 24px 0 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #4ade80;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.quote-left-panel h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.quote-highlight {
+  color: #4ade80;
+}
+
+.quote-left-panel > p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0 0 30px;
+}
+
+.quote-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: auto;
+}
+
+.quote-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.quote-feature-icon {
+  font-size: 1.1rem;
+}
+
+/* WhatsApp Section */
+.quote-whatsapp-section {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.quote-or-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quote-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  width: 100%;
+  justify-content: center;
+}
+
+.quote-whatsapp-btn:hover {
+  background: #1fb855;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+}
+
+/* Right Panel - Form */
+.quote-right-panel {
+  padding: 36px 32px;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quote-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.quote-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.quote-form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quote-form-group input,
+.quote-form-group select,
+.quote-form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(7, 9, 14, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.quote-form-group input:focus,
+.quote-form-group select:focus,
+.quote-form-group textarea:focus {
+  outline: none;
+  border-color: #0F5C3A;
+  box-shadow: 0 0 0 3px rgba(15, 92, 58, 0.2);
+}
+
+.quote-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.quote-form-group select option {
+  background: #0e121a;
+  color: #fff;
+}
+
+.quote-form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.quote-submit-btn {
+  padding: 14px;
+  background: linear-gradient(135deg, #0F5C3A 0%, #1a8a5c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(15, 92, 58, 0.25);
+  margin-top: 4px;
+}
+
+.quote-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(15, 92, 58, 0.4);
+}
+
+.quote-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quote-status {
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.quote-status.success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
+}
+
+.quote-status.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+@media (max-width: 768px) {
+  .quote-modal-content {
+    max-height: 95vh;
+    border-radius: 18px;
+  }
+
+  .quote-modal-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-left-panel {
+    border-radius: 18px 18px 0 0;
+    padding: 28px 24px;
+  }
+
+  .quote-left-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .quote-features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .quote-right-panel {
+    padding: 24px 20px;
+  }
+
+  .quote-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quote-whatsapp-section {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+}
+
+/* Ensure cursor is visible in modal */
+.quote-modal-overlay,
+.quote-modal-overlay * {
+  cursor: auto !important;
+}
+
+.quote-modal-overlay button,
+.quote-modal-overlay a {
+  cursor: pointer !important;
+}

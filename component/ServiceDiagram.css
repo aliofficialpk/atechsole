@@ -1,0 +1,226 @@
+.service-diagram-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+.diagram-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.diagram-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.diagram-layout {
+  position: relative;
+  width: 100%;
+  height: 600px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG Lines */
+.diagram-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.connector-line {
+  stroke: rgba(239, 96, 96, 0.6); /* Reddish accent */
+  stroke-width: 2;
+  stroke-dasharray: 10;
+  animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+/* Center Node */
+.center-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #ef6060;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(239, 96, 96, 0.4);
+}
+
+.center-circle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.center-logo {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid rgba(239, 96, 96, 0.5);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Service Nodes */
+.service-node {
+  position: absolute;
+  width: 260px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-node:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: #ef6060;
+}
+
+
+.service-node.top-left {
+  top: 10%;
+  left: 10%;
+}
+
+.service-node.top-right {
+  top: 10%;
+  right: 10%;
+}
+
+.service-node.bottom-left {
+  bottom: 10%;
+  left: 10%;
+}
+
+.service-node.bottom-right {
+  bottom: 10%;
+  right: 10%;
+}
+
+.node-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #ef6060;
+}
+
+.node-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.node-content h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.node-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .diagram-layout {
+    height: auto;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;
+  }
+  
+  .diagram-lines {
+    display: none; /* Hide lines on mobile as layout changes */
+  }
+  
+  .center-node {
+    display: none;
+  }
+
+  .center-logo {
+    display: none;
+  }
+  
+  .service-node {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Ensure logo shows on >=901px */
+@media (min-width: 901px) {
+  .center-node {
+    display: flex;
+  }
+  .center-logo {
+    display: block;
+  }
+}

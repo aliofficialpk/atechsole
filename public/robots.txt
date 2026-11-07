@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /adminatechsole
+Disallow: /api/
+
+Sitemap: https://atechsole.com/sitemap.xml

@@ -1,0 +1,256 @@
+.services-section {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.services-header {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hand-icon {
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.services-title {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffff;
+  text-transform: uppercase;
+}
+
+.services-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.services-list-mobile {
+  display: none;
+}
+
+.services-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.services-column.left {
+  align-items: flex-end;
+}
+
+.services-column.right {
+  align-items: flex-start;
+}
+
+.service-tag {
+  border: 2px solid #f8fafc;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.service-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  flex-direction: row-reverse;
+}
+
+.diamond {
+  color: #D7262D;
+  font-size: 14px;
+}
+
+.services-center {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.services-center img,
+.center-logo {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  max-height: 210px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+
+.logo-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  z-index: 1;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.services-footer {
+  margin-top: 40px;
+  color: #fff;
+  font-size: 14px;
+  max-width: 500px;
+}
+
+@media (max-width: 992px) {
+  .services-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+   .center-logo {
+    display: none;
+  }
+
+  .services-column {
+    width: 100%;
+    align-items: center !important;
+  }
+
+  .services-center {
+    display: none;
+  }
+
+  .service-tag {
+    flex-direction: row !important;
+  }
+
+  .service-tag:hover {
+    flex-direction: row !important;
+  }
+
+  .services-column.left,
+  .services-column.right {
+    display: none;
+  }
+
+  .services-list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .mobile-service-tag {
+    border: 2px solid #f8fafc;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    max-width: 85%;
+    align-self: flex-start;
+  }
+
+  .mobile-service-tag.mobile-left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .mobile-service-tag.mobile-right {
+    justify-content: flex-end;
+    text-align: right;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-title {
+    font-size: 28px;
+  }
+
+  .service-tag {
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+   .center-logo {
+    display: none;
+  }
+}
+
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .services-center {
+  display: none;
+  }
+
+   .center-logo {
+   display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-title {
+    font-size: 32px;
+  }
+
+  .service-tag {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+
+  .center-logo {
+    display: none;
+  }
+
+  .services-center {
+    display: none;
+  }
+}

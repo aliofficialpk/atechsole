@@ -1,0 +1,34 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10; /* Ensure it stays behind everything */
+  overflow: hidden;
+  pointer-events: none; /* Let clicks pass through */
+}
+
+/* 
+  Dark gradient background to match the "Deep Violet / Dark Green" theme 
+  while ensuring particles are visible.
+*/
+.bg-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, #0b2e1a 0%, #000000 100%);
+  opacity: 0.9; /* Adjust to let particles shine or hide them slightly */
+  z-index: -9;
+}
+
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -8;
+}

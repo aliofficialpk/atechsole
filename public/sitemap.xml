@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://atechsole.com/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://atechsole.com/atechsolelogo.png</image:loc>
+      <image:title>ATechSole Official Logo</image:title>
+      <image:caption>ATechSole Technology Company Logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://atechsole.com/atechsolelogo2.webp</image:loc>
+      <image:title>ATechSole Brand Identity</image:title>
+      <image:caption>ATechSole IT Services, AI Solutions and Software Development</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://atechsole.com/ceo-mustansar-riaz.webp</image:loc>
+      <image:title>Mustansar Riaz - CEO &amp; Founder of ATechSole</image:title>
+      <image:caption>Mustansar Riaz, Chief Executive Officer and Co-Founder of ATechSole</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atechsole.com/about</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://atechsole.com/ceo-mustansar-riaz.webp</image:loc>
+      <image:title>Mustansar Riaz CEO ATechSole</image:title>
+      <image:caption>Mustansar Riaz Founder &amp; CEO of ATechSole - Proven Tech Services Internationally</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://atechsole.com/muhammadAli.png</image:loc>
+      <image:title>Muhammad Ali - Software Engineer &amp; AI/ML Engineer ATechSole</image:title>
+      <image:caption>Muhammad Ali Software Engineer AI/ML Engineer at ATechSole</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atechsole.com/services</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://atechsole.com/careers</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atechsole.com/blog</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
